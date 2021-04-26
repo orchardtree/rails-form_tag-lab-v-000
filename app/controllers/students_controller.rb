@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
   end
 
   def new
+    redirect_to :new_student
   end
 
 end
