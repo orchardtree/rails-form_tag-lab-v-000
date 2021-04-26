@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
+  before_action :set_students, only: [:index, :new]
 
   def index
-    @students = Student.all
   end
 
   def show
@@ -9,7 +9,6 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @students = Student.all
   end
 
   def create
@@ -17,4 +16,9 @@ class StudentsController < ApplicationController
     redirect_to new_student_path
   end
 
+  private
+
+  def set_students
+    @students = Student.all
+  end
 end
